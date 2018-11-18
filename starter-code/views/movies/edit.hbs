@@ -1,0 +1,12 @@
+<h2>If you know it better...</h2>
+
+
+<form action="/movies/{{editMovie.id}}" method="POST">
+
+Title: <input type="text" name="title" value={{editMovie.title}}> <br>
+Genre: <input type="text" name="genre" value={{editMovie.genre}}> <br>
+Plot: <input type="text" name="plot" value={{editMovie.plot}}> <br>
+
+<button type="submit">Update</button>
+
+</form>

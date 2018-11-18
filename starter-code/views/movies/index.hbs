@@ -1,0 +1,18 @@
+<h2>The movies:</h2>
+
+<ul>
+{{#each movieData}}
+  <li>
+    <a href="/movies/index/{{this._id}}">{{this.title}}</a>
+  </li>
+
+  <form action="/movies/{{this._id}}/delete" method="POST">
+  <button type="submit">Don't need that</button>
+  </form>
+
+{{/each}}
+</ul>
+
+<button>
+  <a href="/movies/new">which one´s missing?</a>
+</button>

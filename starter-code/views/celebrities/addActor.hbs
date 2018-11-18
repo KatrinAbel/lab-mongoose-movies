@@ -1,0 +1,22 @@
+<h2>Who did it?</h2>
+
+<form action="/celebrities/addActor" method="POST">
+
+  Movie: <select name="_movie">
+    {{#each movieData}}
+    {{!-- req.body will be the id of the movie --}}
+    <option value="{{this._id}}">{{this.title}}</option>
+    {{/each}}
+  </select> <br>
+
+  Celebrity: <select name="_celebrity">
+    {{#each celebrityData}}
+    {{!-- req.body will be the id of the celebrity --}}
+    <option value="{{this._id}}">{{this.name}}</option>
+    {{/each}}
+  </select> <br>
+
+{{!-- Place button inside form tag in order to submit data --}}
+<button type="submit">Add actor</button>
+
+</form>

@@ -1,0 +1,10 @@
+<h2>Here's all you need to know about: {{celebData.name}}</h2>
+
+{{#each celebData}}
+  <p>Occupation: {{this.occupation}}</p>
+  <p>Catchphrase: {{this.catchphrase}}</p>
+{{/each}}
+
+<button>
+  <a href="/celebrities/{{celebData.id}}/edit">I know it better</a>
+</button>

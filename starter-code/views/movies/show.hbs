@@ -1,0 +1,10 @@
+<h2>Here's all you need to know about: {{movData.name}}</h2>
+
+{{#each movData}}
+  <p>Genre: {{this.genre}}</p>
+  <p>Plot: {{this.plot}}</p>
+{{/each}}
+
+<button>
+  <a href="/movies/{{movData.id}}/edit">I know it better</a>
+</button>

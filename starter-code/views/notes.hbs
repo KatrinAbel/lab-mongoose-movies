@@ -1,0 +1,62 @@
+<h2>Choose your oppontent</h2>
+
+<div>
+  <p>Your playground: {{tableData.address}}</p>
+</div>
+
+<div>
+
+  <p><strong>I know who I want to play:</strong></p>
+  <p>Just type in the username of your frenemy and let the game begin:</p>
+  <form action="/match/{{tableData._id}}/direct" method="POST">
+  <input type="text" name="directOpponent" placeholder="Put in username of your opponent">
+  <button type="submit">Select opponent</button>
+  </form>
+
+<br>
+<h2>OR</h2>
+<br>
+
+  <p><strong>Are you up for a new challenge?</strong></p>
+  <p>Let us choose a random opponent for your next game:</p>
+  <form action="/match/{{tableData._id}}/random" method="POST">
+  <input type="hidden" name="randomOpponent" value={{randomName}}>
+  <p>{{randomName}}</p>
+  <button type="submit">Select opponent</button>
+  </form>
+
+</div>
+
+
+
+<h2>Confirm your match</h2>
+
+<form action="/confirm" method="POST">
+
+<div>
+  <p>Your playground:</p>
+  <input type="hidden"name="table" value={{tableData._id}}>
+  <p>{{tableData.address}}</p>
+</div>
+
+<div>
+  <p>Your opponent:</p>
+  {{!-- if opponent direct is true display opponentdirect otherwise display opponentrandom --}}
+  {{#if opponentDirect}}
+   <input type="hidden" name="opponentDirect" value={{opponentDirect._id}}>
+   <p>{{opponentDirect.username}}</p>
+   {{!-- <option name="opponentDirect" value={{opponentDirect._id}}>{{opponentDirect.username}}</option> --}}
+  {{else}}
+  <input type="hidden" name="opponentRandom" value={{opponentRandom._id}}>
+  <p>{{opponentRandom.username}}</p>
+  {{/if}}
+</div>
+
+<div>
+  <p>Your message:</p>
+  <input type="textarea" name="message" placeholder="Specify time and date and send that invite asap!" size="40">
+</div>
+
+<button type="submit">It's on</button>
+
+</form>

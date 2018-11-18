@@ -1,0 +1,18 @@
+<h2>The cast:</h2>
+
+<ul>
+{{#each celebrityData}}
+  <li>
+    <a href="/celebrities/index/{{this._id}}">{{this.name}}</a>
+  </li>
+
+  <form action="/celebrities/{{this._id}}/delete" method="POST">
+  <button type="submit">Nah, not so important</button>
+  </form>
+
+{{/each}}
+</ul>
+
+<button>
+  <a href="/celebrities/new">who's missing?</a>
+</button>
